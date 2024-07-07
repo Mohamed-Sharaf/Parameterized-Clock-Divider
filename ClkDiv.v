@@ -1,6 +1,9 @@
-// Module: ClkDiv
+//////////////////////////////////////////////////////////////////
+// File: ClkDiv.v
 // Description: Parameterized clock divider module
 // Author: Mohamed Sharaf
+// Date: 11/05/2022
+//////////////////////////////////////////////////////////////////
 
 module ClkDiv
 #( parameter RATIO_WD = 4 ) // Parameter defining the width of the divider ratio
@@ -9,14 +12,14 @@ module ClkDiv
 input 	wire 						I_ref_clk,       // Input reference clock
 input 	wire 						I_rst_n,         // Active-low reset signal
 input 	wire 						I_clk_en,        // Clock enable signal
-input 	wire 	[RATIO_WD-1:0]		I_div_ratio,     // Divider ratio
+input 	wire 	[RATIO_WD-1:0]				I_div_ratio,     // Divider ratio
 output 	wire						O_div_clk        // Output divided clock
 );
 
 // Internal signals
 wire 	[RATIO_WD-1:0]		divide;   // Half of the division ratio
-wire   						clk_en;   // Internal clock enable signal
-reg 						div_clk;  // Register for the divided clock
+wire   				clk_en;   // Internal clock enable signal
+reg 				div_clk;  // Register for the divided clock
 reg 	[RATIO_WD-1:0] 		count;    // Counter register
 
 // Assign divide to half of I_div_ratio
