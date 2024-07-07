@@ -58,3 +58,7 @@ module top_module (
     );
 
 endmodule
+```
+
+# Author:
+- [Mohamed Sharaf](sharafm823@gmail.com)
